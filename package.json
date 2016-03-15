@@ -1,0 +1,29 @@
+{
+  "name": "angular-webpack",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "server": "webpack-dev-server",
+    "start": "npm run build && npm run server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-messages": "^1.5.0",
+    "angular-sanitize": "^1.5.0",
+    "ui-router": "^1.0.0-alpha0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.0",
+    "html-webpack-plugin": "^2.10.0",
+    "raw-loader": "^0.5.1",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

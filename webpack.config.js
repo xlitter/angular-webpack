@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'app');
@@ -42,10 +43,22 @@ module.exports = {
       name: ['angular', 'uiRouter', 'vender'],
       minChunks: Infinity
     }),
+    new NgAnnotatePlugin({
+      add: true
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new HtmlWebpackPlugin({
       title: 'index',
       filename: 'index.html',
       template: 'app/index.html',
+      // 指定嵌入的chunk
+      // chunks: ['angular', 'vender'],
+      // 排除 chunk
+      // excludeChunks: ['angular'],
       chunksSortMode: (function chunksSortMode() {
         const sortMode = {
           vender: 1,
@@ -56,8 +69,6 @@ module.exports = {
         return (a, b) => {
           const sortValA = sortMode[a.names[0]] || 1000;
           const sortValB = sortMode[b.names[0]] || 2000;
-          console.log(sortValA, a.names[0]);
-          console.log(sortValB, b.names[0]);
           return sortValA - sortValB;
         };
       }())

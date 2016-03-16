@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "rimraf ./dist &&　webpack",
     "server": "webpack-dev-server",
-    "start": "npm run build && npm run server"
+    "start": " npm run build && npm run server"
   },
   "author": "",
   "license": "ISC",
@@ -20,8 +20,10 @@
   "devDependencies": {
     "babel-core": "^6.7.0",
     "babel-loader": "^6.2.4",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.5.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.0",
     "html-webpack-plugin": "^2.10.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
     "raw-loader": "^0.5.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

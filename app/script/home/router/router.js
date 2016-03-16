@@ -1,4 +1,3 @@
-import ctrl from '../controller/home';
 const tpl = require('../template/index.html');
 
 export default function router($stateProvider) {
@@ -6,7 +5,7 @@ export default function router($stateProvider) {
     .state('Home', {
       parent: 'Console',
       url: '/home',
-      controller: ctrl.name,
+      controller: 'HomeController',
       template: tpl
     });
 }

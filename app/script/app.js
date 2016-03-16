@@ -8,10 +8,9 @@ const app = angular.module('app', [uiRouter, appConsole, appHome]);
 app.config(($stateProvider, $urlRouterProvider) => {
   $urlRouterProvider.otherwise('/console');
 
-  // .state('Home', {
-  //   parent: 'console',
-  //   url: '/console/home',
-  //   controller: 'HomeController',
-  //   templateUrl: '/home/template/index.html'
+  // $stateProvider.state('Console', {
+  //   url: '/console',
+  //   controller: 'ConsoleController',
+  //   template: require('./console/template/index.html')
   // });
 });

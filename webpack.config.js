@@ -43,9 +43,7 @@ module.exports = {
       name: ['angular', 'uiRouter', 'vender'],
       minChunks: Infinity
     }),
-    new NgAnnotatePlugin({
-      add: true
-    }),
+    new NgAnnotatePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
